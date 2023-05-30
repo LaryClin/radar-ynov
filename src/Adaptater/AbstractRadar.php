@@ -1,8 +1,13 @@
 <?php
 
 namespace App\Adaptater;
+use App\Entity\Radar;
+use App\Entity\Report;
+use App\Entity\Vehicle;
 
 abstract class AbstractRadar implements RadarInterface{
+
+    protected $infos;
 
     public function getVehicle(){
         $vehicle = new Vehicle();
