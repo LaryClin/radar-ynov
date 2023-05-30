@@ -11,6 +11,20 @@ abstract class AbstractRadar implements RadarInterface{
         ->setBrand($this->getBrand());
     }
 
+    public function getReport(){
+        $report = new Report();
+        $report->setSpeed($this->getSpeed())
+        ->setDate($this->getDate())
+        ->setEvidence($this->getEvidence());
+    }
+
+    public function getRadar(){
+        $radar = new Radar();
+        $radar->setName($this->getName())
+        ->setLocalisation($this->getLocalisation())
+        ->setSpeedLimit($this->getSpeedLimit());
+    }
+
     public function getName():string{}
     public function getLocalisation():string{}
     public function getSpeedLimit():integer{}
