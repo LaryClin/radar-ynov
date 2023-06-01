@@ -4,6 +4,7 @@ namespace App\Adaptater;
 use App\Entity\Radar;
 use App\Entity\Report;
 use App\Entity\Vehicle;
+use DateTime;
 
 abstract class AbstractRadar implements RadarInterface{
 
@@ -30,15 +31,41 @@ abstract class AbstractRadar implements RadarInterface{
         ->setSpeedLimit($this->getSpeedLimit());
     }
 
-    public function getName():string{}
-    public function getLocalisation():string{}
-    public function getSpeedLimit():integer{}
-    public function getSpeed():integer{}
-    public function getDate():dateTime{}
-    public function getEvidence():string{}
-    public function getLicense():string{}
-    public function getType():string{}
-    public function getBrand():string{}
+    public function getName():string{
+        return '';
+    }
+
+    public function getLocalisation():string{
+        return '';
+    }
+
+    public function getSpeedLimit(): int{
+        return 0;
+    }
+
+    public function getSpeed(): int{
+        return 0;
+    }
+
+    public function getDate():DateTime{
+        return new DateTime();
+    }
+
+    public function getEvidence():string{
+        return '';
+    }
+
+    public function getLicense():string{
+        return '';
+    }
+    
+    public function getType():string{
+        return '';
+    }
+    
+    public function getBrand():string{
+        return '';
+    }
 
 
 }

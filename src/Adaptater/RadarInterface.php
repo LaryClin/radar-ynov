@@ -2,13 +2,15 @@
 
 namespace App\Adaptater;
 
+use DateTime;
+
 interface RadarInterface {
     
     public function getName():string;
     public function getLocalisation():string;
-    public function getSpeedLimit():integer;
-    public function getSpeed():integer;
-    public function getDate():dateTime;
+    public function getSpeedLimit():int;
+    public function getSpeed():int;
+    public function getDate():DateTime;
     public function getEvidence():string;
     public function getLicense():string;
     public function getType():string;
