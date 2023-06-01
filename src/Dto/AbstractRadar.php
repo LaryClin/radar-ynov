@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Adaptater;
+namespace App\Dto;
 use App\Entity\Radar;
 use App\Entity\Report;
 use App\Entity\Vehicle;

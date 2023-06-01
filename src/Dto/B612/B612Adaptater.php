@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Adaptater\B612;
-use App\Adaptater\AbstractRadar;
+namespace App\Dto\B612;
+use App\Dto\AbstractRadar;
 
 class B612Adaptater extends AbstractRadar{
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Adaptater;
+namespace App\Dto;
 
 use DateTime;
 
