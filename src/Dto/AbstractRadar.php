@@ -17,6 +17,10 @@ abstract class AbstractRadar implements RadarInterface{
         $this->infos = $infos;
     }
 
+    public function getEntities(): array{
+        return [];
+    }
+
     public function getVehicle(): Vehicle{
         $vehicle = new Vehicle();
         $vehicle->setLicense($this->getLicense())
@@ -41,10 +45,10 @@ abstract class AbstractRadar implements RadarInterface{
         return $radar;
     }
 
-    public function persistEntities($adaptater) {
+    public function persistEntities() {
         $em = $this->getDoctrine()->getManager();
 
-        foreach($adaptater->getEntities() as $entity) {
+        foreach($this->getEntities() as $entity) {
             // $entity = [
             //     "vehicle" => Vehicle::class,
             //     "report" => Report::class,

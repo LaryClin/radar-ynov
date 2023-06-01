@@ -22,9 +22,8 @@ class B612Controller extends AbstractController {
         EntityManagerInterface $em
     ): Response {
         $input = file_get_contents("php://input");
-        $controller = new RadarController(
-            new B612Dto($input)
-        );
+        $adaptater = new B612Dto($input)
+        $adaptater->persistEntities()
         
         return new Response();
     }
