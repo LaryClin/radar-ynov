@@ -3,7 +3,7 @@
 namespace App\Adaptater\B612;
 use App\Adaptater\AbstractRadar;
 
-class B612 extends AbstractRadar{
+class B612Adaptater extends AbstractRadar{
 
     public function getName():string{}
     public function getLocalisation():string{}
