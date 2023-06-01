@@ -5,4 +5,4 @@
 
 index:
   path: /radar
-  controller: App\Controller\DefaultController::index
+  controller: App\Controller\RadarController::index

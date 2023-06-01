@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Dto\AwesomeRadar;
+namespace App\Dto;
 
 use App\Dto\AbstractRadar;
 use DateTime;
