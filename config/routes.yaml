@@ -1,3 +1,8 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+
+index:
+  path: /radar
+  controller: App\Controller\DefaultController::index

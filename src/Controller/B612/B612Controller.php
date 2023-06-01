@@ -1,3 +1,3 @@
 <?php
 
-namespace B612Controller
+namespace B612Controller;
