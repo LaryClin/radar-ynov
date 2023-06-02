@@ -1,27 +1,27 @@
 <?php
 
-namespace App\Repository;
+namespace App\Repository\Repository;
 
-use App\Entity\Radar;
+use App\Entity\Report;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Radar>
+ * @extends ServiceEntityRepository<Report>
  *
- * @method Radar|null find($id, $lockMode = null, $lockVersion = null)
- * @method Radar|null findOneBy(array $criteria, array $orderBy = null)
- * @method Radar[]    findAll()
- * @method Radar[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Report|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Report|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Report[]    findAll()
+ * @method Report[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class RadarRepository extends ServiceEntityRepository
+class DatabaseReportRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Radar::class);
+        parent::__construct($registry, Report::class);
     }
 
-    public function save(Radar $entity, bool $flush = false): void
+    public function save(Report $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class RadarRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Radar $entity, bool $flush = false): void
+    public function remove(Report $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class RadarRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Radar[] Returns an array of Radar objects
+//     * @return Report[] Returns an array of Report objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class RadarRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Radar
+//    public function findOneBySomeField($value): ?Report
 //    {
 //        return $this->createQueryBuilder('r')
 //            ->andWhere('r.exampleField = :val')
