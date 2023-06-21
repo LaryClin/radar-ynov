@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repository\Repository;
+namespace App\Repository\Api;
 
 use App\Entity\Report;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
@@ -14,30 +14,30 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Report[]    findAll()
  * @method Report[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class DatabaseReportRepository extends ServiceEntityRepository
+class ApiReportRepository 
 {
-    public function __construct(ManagerRegistry $registry)
-    {
-        parent::__construct($registry, Report::class);
-    }
+    // public function __construct(ManagerRegistry $registry)
+    // {
+    //     parent::__construct($registry, Report::class);
+    // }
 
-    public function save(Report $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->persist($entity);
+    // public function save(Report $entity, bool $flush = false): void
+    // {
+    //     $this->getEntityManager()->persist($entity);
 
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
-    }
+    //     if ($flush) {
+    //         $this->getEntityManager()->flush();
+    //     }
+    // }
 
-    public function remove(Report $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->remove($entity);
+    // public function remove(Report $entity, bool $flush = false): void
+    // {
+    //     $this->getEntityManager()->remove($entity);
 
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
-    }
+    //     if ($flush) {
+    //         $this->getEntityManager()->flush();
+    //     }
+    // }
 
 //    /**
 //     * @return Report[] Returns an array of Report objects

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repository\Repository;
+namespace App\Repository\Api;
 
 use App\Entity\Radar;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
@@ -16,28 +16,28 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class ApiRadarRepository 
 {
-    public function __construct(ManagerRegistry $registry)
-    {
-        parent::__construct($registry, Radar::class);
-    }
+    // public function __construct(ManagerRegistry $registry)
+    // {
+    //     parent::__construct($registry, Radar::class);
+    // }
 
-    public function save(Radar $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->persist($entity);
+    // public function save(Radar $entity, bool $flush = false): void
+    // {
+    //     $this->getEntityManager()->persist($entity);
 
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
-    }
+    //     if ($flush) {
+    //         $this->getEntityManager()->flush();
+    //     }
+    // }
 
-    public function remove(Radar $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->remove($entity);
+    // public function remove(Radar $entity, bool $flush = false): void
+    // {
+    //     $this->getEntityManager()->remove($entity);
 
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
-    }
+    //     if ($flush) {
+    //         $this->getEntityManager()->flush();
+    //     }
+    // }
 
 //    /**
 //     * @return Radar[] Returns an array of Radar objects

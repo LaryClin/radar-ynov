@@ -1,45 +1,33 @@
 <?php
 
-use App\Repository\OutRepositoryInterface;
-use Doctrine\ORM\EntityManager;
+namespace App\UseCase;
 
-class saveRadarUseCase {
+use App\Repository\OutRepositoryInterface;
+
+class SaveRadarUseCase {
 
     public function __construct(
-        private OutRepositoryInterface $outRepositoryInterface,
-        private EntityManager $em,
-        $VehicleReportRadar
+        private OutRepositoryInterface $outRepositoryInterface
     )
     {}
 
     public function saveRadar($VehicleReportRadar) {
-        // $entity = [
-        //     "vehicle" => Vehicle::class,
-        //     "report" => Report::class,
-        //     "radar" => Radar::class,
-        // ]
-
         list(
             'vehicle' => $vehicle,
             'report' => $report,
             'radar' =>  $radar
             ) = $VehicleReportRadar;
 
-        $radarRepository = $this->outRepositoryInterface->getRadarRepository();
-        $vehicleRepository = $this->outRepositoryInterface->getVehicleRepository();
+        if(!$this->outRepositoryInterface->findOneRadarBy(['name' => $radar->getName()]))
+            $radar = $this->outRepositoryInterface->saveRadar($radar);
 
-
-        if(!$radarRepository->findOneBy(['name' => $radar->getName()]))
-            $radar = $radarRepository->persist($radar);
-
-        if(!$vehicleRepository->findOneBy(['license' => $vehicle->getLicense()]))
-            $vehicle = $vehicleRepository->persist($vehicle);
+        if(!$this->outRepositoryInterface->findOneVehicleBy(['license' => $vehicle->getLicense()]))
+            $vehicle = $this->outRepositoryInterface->saveVehicle($vehicle);
 
         $report->setRadar($radar);
         $report->setVehicle($vehicle);
-        $em->persist($report);
+        $this->outRepositoryInterface->saveReport($report);
         
-        $em->flush();
     }
 
 }

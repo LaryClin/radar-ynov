@@ -71,8 +71,8 @@ abstract class AbstractMapping {
 
     abstract protected function getLicense(): ?string;
     
-    protected function getType(): ?string{
-        return NULL;
+    protected function getType(): string{
+        return '';
     }
     
     protected function getBrand(): ?string{

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repository\Repository;
+namespace App\Repository\Api;
 
 use App\Entity\Vehicle;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
@@ -14,30 +14,30 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Vehicle[]    findAll()
  * @method Vehicle[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class DatabaseVehicleRepository extends ServiceEntityRepository
+class ApiVehicleRepository 
 {
-    public function __construct(ManagerRegistry $registry)
-    {
-        parent::__construct($registry, Vehicle::class);
-    }
+    // public function __construct(ManagerRegistry $registry)
+    // {
+    //     parent::__construct($registry, Vehicle::class);
+    // }
 
-    public function save(Vehicle $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->persist($entity);
+    // public function save(Vehicle $entity, bool $flush = false): void
+    // {
+    //     $this->getEntityManager()->persist($entity);
 
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
-    }
+    //     if ($flush) {
+    //         $this->getEntityManager()->flush();
+    //     }
+    // }
 
-    public function remove(Vehicle $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->remove($entity);
+    // public function remove(Vehicle $entity, bool $flush = false): void
+    // {
+    //     $this->getEntityManager()->remove($entity);
 
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
-    }
+    //     if ($flush) {
+    //         $this->getEntityManager()->flush();
+    //     }
+    // }
 
 //    /**
 //     * @return Vehicle[] Returns an array of Vehicle objects

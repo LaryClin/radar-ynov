@@ -1,6 +1,6 @@
 <?php
 
-namespace App\AbstractMapping;
+namespace App\Mapping;
 
 use App\Mapping\AbstractMapping;
 use DateTime;

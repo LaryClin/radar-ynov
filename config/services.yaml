@@ -20,5 +20,15 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
+    App\Repository\OutRepositoryInterface:
+        factory: ['App\Repository\RepositoryFactory', 'createRadarRepository']
+        bind:
+            $outMode: '%env(OUTMODE)%'
+
+    App\Repository\DatabaseRepository:
+        arguments:
+            - '@Doctrine\ORM\EntityManagerInterface'
+            - '@Doctrine\Persistence\ManagerRegistry'
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

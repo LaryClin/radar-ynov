@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repository\Repository;
+namespace App\Repository\Database;
 
 use App\Entity\Report;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;

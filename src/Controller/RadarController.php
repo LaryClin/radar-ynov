@@ -12,11 +12,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class RadarController extends AbstractController {
 
     #[Route('/radar', name: 'route')]
-    public function getReportByDate(ReportRepository $reportRepo) {
-        $input = readfile("php://input");
-        $date = new DateTime($input);
-        $reports = $reportRepo->findBy(['date'=> $date]);
-        return new JsonResponse($reports);
+    public function getReportByDate() {
+        // $input = readfile("php://input");
+        // $date = new DateTime($input);
+        // $reports = $reportRepo->findBy(['date'=> $date]);
+        return new JsonResponse(null);
     }
 
 }
